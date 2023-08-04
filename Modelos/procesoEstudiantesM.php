@@ -35,7 +35,7 @@ class procesoEstudiantesM extends ConexionBD{
         $password = password_hash($pw_temp, PASSWORD_DEFAULT);
         
         $query = "INSERT INTO $this->tablaBD VALUES 
-            (NULL,'$nombre','$apellido','$tefefono','$genero','$dnii','$email','$password','estudiante',01)";
+            (NULL,'$nombre','$apellido','$tefefono','$genero','$dnii','$email','$password','estudiante',null,null,01)";
 
         $resultado = $cBD->query($query);
         return $resultado;

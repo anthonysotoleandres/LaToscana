@@ -13,7 +13,7 @@ $mostrarPerfiles = $perfilC->mostrarPerfilC();
 <div class="container-fluid">
 
     <!-- Content Row -->
-    <div class="row">
+    <div class="row justify-content-center">
 
         <!-- Principal Content -->
         <div class="col-xl-8 col-lg-7">
@@ -87,20 +87,7 @@ $mostrarPerfiles = $perfilC->mostrarPerfilC();
             </div>
         </div>
 
-        <!-- Div al costado -->
-        <div class="col-xl-4 col-lg-5">
-            <!-- Contenido del div al costado -->
-            <div class="card position-relative">
-                <div class="card-header py-3">
-                    <div class="d-sm-flex align-items-center justify-content-between mb-6">
-                        <h6 class="m-0 font-weight-bold text-primary">Perfil</h6>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <!-- Contenido adicional al costado -->
-                </div>
-            </div>
-        </div>
+
 
     </div>
 </div>

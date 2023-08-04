@@ -1,43 +1,45 @@
-<?php  //Controladores/adminC.php
-class AdminC{
-    function __construct(){
+<?php
+class AdminC {
+    function __construct() {
         $this->adminM = new AdminM();
     }
 
-    public function IngresoC(){
-        if(isset($_SESSION['Ingreso']))
+    public function IngresoC() {
+        if(isset($_SESSION['Ingreso'])){
             header("location: index.php?ruta=dashboard");
-        if(isset($_POST["usuarioI"])){
-            $datosC = array(   
-                            "usuario"=>$_POST["usuarioI"], 
-                            "contraseña"=>$_POST["claveI"],
-                            "perfil"=>$_POST["perfilI"]);
-            //$tablaBD = "usuarios";
+        }
+       
+
+        if (isset($_POST["usuarioI"])) {
+            $datosC = array(
+                "usuario" => $_POST["usuarioI"],
+                "contraseña" => $_POST["claveI"],
+                "perfil" => $_POST["perfilI"]
+            );
+
             $resultado = $this->adminM->IngresoM($datosC);
-            //$rows = $pagina->fetch_array(MYSQLI_ASSOC);
-            if ($resultado){
-                session_start(); 
-                $_SESSION['Ingreso']=$resultado;
-                $_SESSION['perfil'] = $datosC['perfil']; // Almacenar el perfil del usuario en una variable de sesión
 
-                if ($_SESSION['perfil'] == 'administrador'){
-                    header("location: index.php?ruta=dashboard");
+            if ($resultado) {
+                session_start();
+                $_SESSION['Ingreso'] = $resultado;
+                $_SESSION['perfil'] = $datosC['perfil'];
 
-                }else{
-
-                    header("location: index.php?ruta=plan_estudio");
+                if ($_SESSION['perfil'] == 'administrador') {
+                    header("location:index.php?ruta=dashboard");
+                    exit();
+                } else {
+                    header("location:index.php?ruta=plan_estudio");
+                    exit();
                 }
-                
-            }
-            else
-            {
+            } else {
                 return false;
             }
         }
+
         return true;
     }
 
-    public function salirC(){
+    public function salirC() {
         ob_start();
         session_destroy();
         header('location:index.php?ruta=ingreso');
@@ -45,15 +47,16 @@ class AdminC{
         ob_end_flush();
     }
 
-    public function sesionIniciadaC(){
+    public function sesionIniciadaC() {
         session_start();
-        if(isset($_SESSION['Ingreso']))
+        if (isset($_SESSION['Ingreso'])) {
             return true;
+        }
         return false;
     }
 
-    public function redirigirSesionC($ruta){
-        if(!$_SESSION["Ingreso"]){
+    public function redirigirSesionC($ruta) {
+        if (!$_SESSION["Ingreso"]) {
             header("location:index.php?=$ruta");
             exit();
         }

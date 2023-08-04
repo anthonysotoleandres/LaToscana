@@ -2,7 +2,7 @@
 <?php
 ob_start(); // Habilitar almacenamiento en búfer de salida bg-gradient-success
 	$adminC = new AdminC();
-      ob_start();
+ob_start();
 ?>
 
 <?php if($adminC->sesionIniciadaC()):?>
@@ -261,6 +261,13 @@ $mostrarPerfiles2 = $perfilC->mostrarPerfil2C();
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
                 <a class="nav-link collapsed" href="index.php?ruta=reporte_estudiantes" >
+                    <i class="fas fa-file"></i>
+
+                    <span>Reportes de Estudiantes</span>
+                </a>
+
+                <li class="nav-item">
+                <a class="nav-link collapsed" href="index.php?ruta=reporte_docentes" >
                     <i class="fas fa-file"></i>
 
                     <span>Reportes de Docentes</span>

@@ -38,7 +38,7 @@ class procesoDocentesM extends ConexionBD{
         $password = password_hash($pw_temp, PASSWORD_DEFAULT);
         
         $query = "INSERT INTO $this->tablaBD VALUES 
-            (NULL,'$nombre','$apellido','$dnii','$password','docente','$tefefono','$genero','$email')";
+            (NULL,'$nombre','$apellido','$dnii','$password','docente','$tefefono','$genero','$email',01)";
 
         $resultado = $cBD->query($query);
         return $resultado;
@@ -50,7 +50,7 @@ class procesoDocentesM extends ConexionBD{
         $cBD = $this->conectarBD();
         $iduser=$_SESSION['Ingreso'];
 
-        $query = "SELECT * FROM $this->tablaBD";
+        $query = "SELECT * FROM $this->tablaBD WHERE estado = 01";
 
         $resultado = $cBD->query($query);
         return $resultado;
@@ -81,7 +81,20 @@ class procesoDocentesM extends ConexionBD{
     
         return $resultado;
     }   
+
+    /// /BORRAR DOCENTES   
+    public function borrarDocenteM($datosC){
+        $cBD = $this->conectarBD();
+        $iduser=$_SESSION['Ingreso'];
     
+        $IDE = $datosC['iddocentes'];
+    
+
+        $query = "UPDATE docentes SET estado = 02 WHERE docentes.iddocentes = '$IDE'";
+        $resultado = $cBD->query($query);
+    
+        return $resultado;
+    }
 
 
 

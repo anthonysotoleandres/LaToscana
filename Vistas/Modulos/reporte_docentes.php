@@ -2,6 +2,9 @@
 $mostrarC = new procesoDocentesC();
 
 $mostrarDocentes = $mostrarC->mostrarDocentesC();
+
+
+$mostrarC->borrarDocenteC();
 ?>
 
 
@@ -46,14 +49,41 @@ $mostrarDocentes = $mostrarC->mostrarDocentesC();
                                         <td><?=$mostrarDocente['telefono']?></td>
                                         <td><?=$mostrarDocente['genero']?></td>
                                         <td><?=$mostrarDocente['email']?></td>
-                                        <td>
-                                            <a href="#" class="btn btn-info btn-circle">
-                                                <i class="fas fa-pencil-alt"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-danger btn-circle">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
-                                        </td>
+                                        <td class="text-center">
+                                            <?php if (isset($_SESSION['perfil']) && $_SESSION['perfil'] === 'administrador'): ?>
+                                                <!-- Enlace para eliminar el DOCENTES -->
+                                                <a href="#confirmacionModal<?=$mostrarDocente['iddocentes']?>" class="btn btn-danger btn-circle" data-toggle="modal">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
+                                            <?php endif; ?>
+
+
+                                            <!-- Ventana emergente de confirmación -->
+                                            <div class="modal fade" id="confirmacionModal<?=$mostrarDocente['iddocentes']?>" tabindex="-1" role="dialog" aria-labelledby="confirmacionModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="confirmacionModalLabel">Confirmación</h5>
+                                                                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">×</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                ¿Estás seguro de eliminar al Docente?
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                                                                                <a href="index.php?ruta=reporte_docentes&idPROFE=<?=$mostrarDocente['iddocentes']?>" class="btn btn-primary">Eliminar</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+
+
+                                            </td>
                                             
                                                     
                                     </tr>

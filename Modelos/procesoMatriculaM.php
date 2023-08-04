@@ -45,9 +45,14 @@ class procesoMatriculaM extends ConexionBD{
 
         $query2 = "UPDATE $this->tablaBD SET 
                 ciclo = '$ciclo' WHERE estudiantes.idestudiantes = $id ";
+
+        $query3 = "UPDATE $this->tablaBD SET 
+                    codigo_estudiante = '$dodigo' WHERE estudiantes.idestudiantes = $id ";
+                
     
         $result = $cBD->query($query);
         $result2 = $cBD->query($query2);
+        $resulte = $cBD->query($query3);
         return $result;
     }
 
@@ -98,7 +103,7 @@ class procesoMatriculaM extends ConexionBD{
 
     }
 
-        /// MODIFICAR CODIGO DEL ESTUDIANTES   
+        /// MODIFICAR CODIGO y ciclo DEL ESTUDIANTES   
         public function registrarCodigoM($datosC){
             $cBD = $this->conectarBD();
             $iduser=$_SESSION['Ingreso'];

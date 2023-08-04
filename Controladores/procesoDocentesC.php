@@ -46,6 +46,21 @@ class procesoDocentesC {
     }
 }
 
+ // ELIMINAR DOCENTES
+ public function borrarDocenteC(){
+    if(isset($_GET['idPROFE'])){
+        $datosC = array();
+        $datosC['iddocentes'] = $_GET['idPROFE'];
+        $resultado=$this->procesoDocentesM->borrarDocenteM($datosC);
+        header("location: index.php?ruta=reporte_docentes");
+        exit();
+        
+    }
+}
+   
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////
 // Contar Docentes
