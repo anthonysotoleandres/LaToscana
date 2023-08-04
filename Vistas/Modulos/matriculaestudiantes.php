@@ -7,7 +7,7 @@ $mostrarEstudiantes = $matricularC->mostrarEstudiantesC();
 $mostrarMatriculas = $matricularC->mostrarMatriculas2C();
 
 ?>
-
+ 
 
 
 
