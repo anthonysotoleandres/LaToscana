@@ -84,7 +84,7 @@ class procesoMatriculaM extends ConexionBD{
         $resultado = $cBD->query($query);
         return $resultado;
 
-    }
+    } 
 
     /// /MOSTRAR ESTUDIANTES 2
     public function mostrarMatriculas2M($datosC){

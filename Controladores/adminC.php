@@ -28,7 +28,7 @@ class AdminC {
                     header("location:index.php?ruta=dashboard");
                     exit();
                 } else {
-                    header("location:index.php?ruta=plan_estudio");
+                    header("location:index.php?ruta=reporte_estudiantes");
                     exit();
                 }
             } else {

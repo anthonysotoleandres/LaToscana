@@ -35,7 +35,7 @@ $mostrarEstudiantes = $mostrarC->mostrarEstudiantesMatriculadosC();
                             <tbody>
 
                             <?php foreach($mostrarEstudiantes as $mostrarEstudiante): ?>
-                                <?php if ($mostrarEstudiante['ciclo'] == 'Ciclo-I'): ?> <!-- Agregar condición para el ciclo 1 -->          
+                                <?php if ($mostrarEstudiante['ciclo'] == '1'): ?> <!-- Agregar condición para el ciclo 1 -->          
                                     <tr>
                                                     
                                         <td><?=$mostrarEstudiante['turno']?></td>
@@ -67,7 +67,7 @@ $mostrarEstudiantes = $mostrarC->mostrarEstudiantesMatriculadosC();
                             </thead>
                             <tbody>
                             <?php foreach($mostrarEstudiantes as $mostrarEstudiante): ?>
-                                <?php if ($mostrarEstudiante['ciclo'] == 'Ciclo-II'): ?> <!-- Agregar condición para el ciclo 1 -->          
+                                <?php if ($mostrarEstudiante['ciclo'] == '2'): ?> <!-- Agregar condición para el ciclo 1 -->          
                                     <tr>
                                                     
                                         <td><?=$mostrarEstudiante['turno']?></td>
@@ -100,7 +100,7 @@ $mostrarEstudiantes = $mostrarC->mostrarEstudiantesMatriculadosC();
                             </thead>
                             <tbody>
                             <?php foreach($mostrarEstudiantes as $mostrarEstudiante): ?>
-                                <?php if ($mostrarEstudiante['ciclo'] == 'Ciclo-III'): ?> <!-- Agregar condición para el ciclo 1 -->          
+                                <?php if ($mostrarEstudiante['ciclo'] == '3'): ?> <!-- Agregar condición para el ciclo 1 -->          
                                     <tr>
                                                     
                                         <td><?=$mostrarEstudiante['turno']?></td>
@@ -132,7 +132,7 @@ $mostrarEstudiantes = $mostrarC->mostrarEstudiantesMatriculadosC();
                             </thead>
                             <tbody>
                             <?php foreach($mostrarEstudiantes as $mostrarEstudiante): ?>
-                                <?php if ($mostrarEstudiante['ciclo'] == 'Ciclo-IV'): ?> <!-- Agregar condición para el ciclo 1 -->          
+                                <?php if ($mostrarEstudiante['ciclo'] == '4'): ?> <!-- Agregar condición para el ciclo 1 -->          
                                     <tr>
                                                     
                                         <td><?=$mostrarEstudiante['turno']?></td>
@@ -164,7 +164,7 @@ $mostrarEstudiantes = $mostrarC->mostrarEstudiantesMatriculadosC();
                             </thead>
                             <tbody>
                             <?php foreach($mostrarEstudiantes as $mostrarEstudiante): ?>
-                                <?php if ($mostrarEstudiante['ciclo'] == 'Ciclo-V'): ?> <!-- Agregar condición para el ciclo 1 -->          
+                                <?php if ($mostrarEstudiante['ciclo'] == '5'): ?> <!-- Agregar condición para el ciclo 1 -->          
                                     <tr>
                                                     
                                         <td><?=$mostrarEstudiante['turno']?></td>
@@ -196,7 +196,7 @@ $mostrarEstudiantes = $mostrarC->mostrarEstudiantesMatriculadosC();
                             </thead>
                             <tbody>
                             <?php foreach($mostrarEstudiantes as $mostrarEstudiante): ?>
-                                <?php if ($mostrarEstudiante['ciclo'] == 'Ciclo-VI'): ?> <!-- Agregar condición para el ciclo 1 -->          
+                                <?php if ($mostrarEstudiante['ciclo'] == '6'): ?> <!-- Agregar condición para el ciclo 1 -->          
                                     <tr>
                                                     
                                         <td><?=$mostrarEstudiante['turno']?></td>
